@@ -1,4 +1,3 @@
-# Nombre: Cynthia Calixtro Ames 20150456D
 # Respuesta3: El codigo muestra la creacion y
 # manipulacion de factores
 
