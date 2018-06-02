@@ -1,32 +1,40 @@
-﻿##  DECLARACION DEL TRABAJO GRUPAL
+# DECLARACIÓN DEL TRABAJO GRUPAL
 
-| Unidad academica: Laboratorios de R | Semestre: 2018 - I |
+| Unidad académica: Laboratorios de R | Semestre: 2018 - I |
 | ---------- | ---------- |
-| Curso y horario: CM274-Introduccion a las probabilidades e inferencia estadística  | Profesor: César Lara Ávila   |
+| Curso| CM274-Introducción a las probabilidades e inferencia estadística  |
+|Profesor| César Lara Ávila   |
+| Título del trabajo|  Implementación del Algoritmo Propp-Wilson para el muestreo de distribuciones estacionarias de una Cadena de Markov|
+| Repositorio del proyecto | [Proyecto de Laboratorio de R](https://github.com/CynthiaCalixtro/Proyecto-de-Laboratorio-R)|
 
 
-| Título del trabajo: CADENAS DE MARKOV| 
+## Funciones de cada integrante:
 
-| Diseño/planificacion del trabajo grupal(definir cronograma del trabajo, etc.) | 
+- *Nesiosup  Vilca, Marcia Paulina.* (Código UNI: *20164094B*)
 
-| Funciones(compromiso) de cada integrante | nombre y fecha |
-| ---------- | ---------- |
-| Elaboracion del PDF.    |   Marcia Paulina|
-| Implementacion del código.  |    |
-| Ejecución de pregunta 4 y 7 del laboratorio 1.   |  Nesiosup  Vilca|
-| Ejecución de pregunta 2 y 6 del laboratorio 2.   |    |
-| Elaboracion del PDF.    |  Yasmyn Sthepany|
-| Implementacion del código.  |    |
-| Edición en Latex del PDF  |    |
-| Ejecución de pregunta 5 y 6 del laboratorio 1.   |  Gomez Romero|
-| Ejecución de pregunta 1 y 3 del laboratorio 2.   |    |
-| Elaboracion del PDF.    |   Cynthia |
-| Implementacion del código.  |    |
-| Ejecución de pregunta 3 y 8 del laboratorio 1.   |  Calixtro Ames|
-| Ejecución de pregunta 4 y 5 del laboratorio 2.   |    |
-| Elaboracion del PDF.    |   Alex Raul|
-| Implementacion del código.  |    |
-| Ejecución de pregunta 1 y 2 del laboratorio 1.   |  Huamaní Inga|
-| Ejecución de pregunta 6 y 7 del laboratorio 2.   |   20121383B |
+   - Elaboración del PDF.
+   - Implementación del código.
+   - Ejecución de pregunta 4 y 7 del laboratorio 1.
+   - Ejecución de pregunta 2 y 8 del laboratorio 2.
 
+- *Gomez Romero, Yasmyn Sthepany.* (Código UNI: *20160554I*)
 
+   - Elaboracion del PDF.
+   - Implementacion del código.
+   - Edición en Latex del PDF.
+   - Ejecución de pregunta 5 y 6 del laboratorio 1.
+   - Ejecución de pregunta 1 y 3 del laboratorio 2.
+
+- *Calixtro Ames, Cynthia Lizeth.* (Código UNI: *20150456D*)
+
+   - Elaboracion del PDF.
+   - Implementacion del código.
+   - Ejecución de pregunta 3 y 8 del laboratorio 1.
+   - Ejecución de pregunta 4 y 5 del laboratorio 2.
+
+- *Huamaní Inga, Álex Raúl.* (Código UNI: *20121383B*)
+
+   - Elaboracion del PDF.
+   - Implementacion del código.
+   - Ejecución de pregunta 1 y 2 del laboratorio 1.
+   - Ejecución de pregunta 6 y 7 del laboratorio 2.
