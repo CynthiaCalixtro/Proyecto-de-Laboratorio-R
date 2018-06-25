@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.5.21)  24 JUN 2018 22:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.5.21)  24 JUN 2018 23:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -763,6 +763,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 177--178
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
+[]\OT1/cmr/bx/n/12 CADENAS DE MAR-KOV
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
+\OT1/cmr/bx/n/12 IRRE-DUC-TI-BLES Y APE-
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 179--184
 
  []
@@ -782,7 +792,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 207--209
 
  []
 
-
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
@@ -792,7 +802,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 212--214
 
  []
 
-[3]
+
 Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
@@ -802,71 +812,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 221--224
 
  []
 
-<fun1.jpeg, id=27, 853.1875pt x 515.9275pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--243
+
+ []
+
+[4]
+<fun1.jpeg, id=31, 853.1875pt x 515.9275pt>
 File: fun1.jpeg Graphic file (type jpg)
 <use fun1.jpeg>
-Package pdftex.def Info: fun1.jpeg  used on input line 243. on input line 243.
+Package pdftex.def Info: fun1.jpeg  used on input line 269. on input line 269.
 Package pdftex.def Info: Requested size: 255.95822pt x 154.77943pt on input lin
-e 243.
+e 269.
 
-Overfull \hbox (28.33621pt too wide) in paragraph at lines 243--244
+Overfull \hbox (28.33621pt too wide) in paragraph at lines 269--270
  [][] 
  []
 
 
-Overfull \hbox (34.90553pt too wide) in paragraph at lines 248--249
+Overfull \hbox (34.90553pt too wide) in paragraph at lines 274--275
 \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 A; C; G; T\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/n/1
 0 (A=adenina,C=citosina,G=guanina,T=timina) 
  []
 
-<fun2.jpeg, id=28, 716.6775pt x 269.005pt>
+<fun2.jpeg, id=32, 716.6775pt x 269.005pt>
 File: fun2.jpeg Graphic file (type jpg)
 <use fun2.jpeg>
-Package pdftex.def Info: fun2.jpeg  used on input line 252. on input line 252.
+Package pdftex.def Info: fun2.jpeg  used on input line 278. on input line 278.
 Package pdftex.def Info: Requested size: 186.33176pt x 69.93964pt on input line
- 252.
-<fun3.jpeg, id=29, 1284.8pt x 151.56625pt>
+ 278.
+<fun3.jpeg, id=33, 1284.8pt x 151.56625pt>
 File: fun3.jpeg Graphic file (type jpg)
 <use fun3.jpeg>
-Package pdftex.def Info: fun3.jpeg  used on input line 259. on input line 259.
+Package pdftex.def Info: fun3.jpeg  used on input line 285. on input line 285.
 Package pdftex.def Info: Requested size: 256.95544pt x 30.3127pt on input line 
-259.
+285.
 
-Overfull \hbox (29.33344pt too wide) in paragraph at lines 259--260
+Overfull \hbox (29.33344pt too wide) in paragraph at lines 285--286
  [][] 
  []
 
-<fun4.jpeg, id=30, 1081.03876pt x 78.2925pt>
+<fun4.jpeg, id=34, 1081.03876pt x 78.2925pt>
 File: fun4.jpeg Graphic file (type jpg)
 <use fun4.jpeg>
-Package pdftex.def Info: fun4.jpeg  used on input line 266. on input line 266.
+Package pdftex.def Info: fun4.jpeg  used on input line 292. on input line 292.
 Package pdftex.def Info: Requested size: 270.25902pt x 19.57307pt on input line
- 266.
+ 292.
 
-Overfull \hbox (42.63701pt too wide) in paragraph at lines 266--267
+Overfull \hbox (42.63701pt too wide) in paragraph at lines 292--293
  [][] 
  []
 
-[4 <./fun1.jpeg> <./fun2.jpeg>]
 <fun5.jpeg, id=35, 947.54pt x 866.23625pt>
 File: fun5.jpeg Graphic file (type jpg)
 <use fun5.jpeg>
-Package pdftex.def Info: fun5.jpeg  used on input line 273. on input line 273.
+Package pdftex.def Info: fun5.jpeg  used on input line 299. on input line 299.
 Package pdftex.def Info: Requested size: 189.50464pt x 173.24417pt on input lin
-e 273.
- [5 <./fun3.jpeg> <./fun4.jpeg> <./fun5.jpeg>]
+e 299.
+
+Overfull \vbox (41.02663pt too high) has occurred while \output is active []
+
+
+[5 <./fun1.jpeg> <./fun2.jpeg> <./fun3.jpeg> <./fun4.jpeg>] [6 <./fun5.jpeg>]
 (./Cadenas_de_Markov.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 5124 strings out of 492990
- 71662 string characters out of 6135005
- 148581 words of memory out of 5000000
- 8579 multiletter control sequences out of 15000+600000
- 10367 words of font info for 40 fonts, out of 8000000 for 9000
+ 5133 strings out of 492990
+ 71784 string characters out of 6135005
+ 157581 words of memory out of 5000000
+ 8588 multiletter control sequences out of 15000+600000
+ 10972 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,8n,39p,622b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,8n,39p,622b,372s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texl
@@ -882,10 +901,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Cadenas_de_Markov.pdf (5 pages, 548757 bytes).
+Output written on Cadenas_de_Markov.pdf (6 pages, 556426 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 92 PDF objects out of 1000 (max. 8388607)
+ 62 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -94,7 +94,7 @@ Keywords: Chains, Markov, Implementation, Estochastic. \\
 \section{INTRODUCCIÓN}
 \end{center}
 Para una mejor comprensión de las cadenas de Markov y la posterior simulación de algunos ejemplos empezaremos por establecer algunos conceptos previos requeridos.
-
+\subsection{CONCEPTOS}
 \textbf{\textit{Procesos Estocásticos}}\\
 Un proceso estocástico se puede definir equivalentemente de las siguientes dos maneras.\\
 1. Como un conjunto de realizaciones temporales y un índice aleatorio que selecciona una 
@@ -175,7 +175,7 @@ puede además demostrarse que es una \textbf{Martingala} y que cumple la
 \textbf{propiedad de Markov}.\\
 
 \noindent Con un panorama más amplio de conocimiento acerca de los procesos estocásticos entraremos a profundidad en el concepto y diversos ejemplos de cadenas de Markov.\\
-
+\subsection{CADENAS DE MARKOV IRREDUCTIBLES Y APERIÓDICAS}
 \noindent {\textbf{Definición 1. Espacio de estados}}\\
 Definimos el \textit{espacio de estados} como el conjunto formado por todos los posibles 
 valores que puede tomar $X_{n}$ donde el índice $n$ representa la evolución del proceso 
@@ -224,7 +224,7 @@ Cuando un estado tiene periodo igual a 1 entonces se dirá que es \textit{aperi�
 
 Una cadena de Markov es llamada \textit{aperiódica} cuando todos sus estados son aperiódicos. En caso contrario, se le denomina \textit{periódica}.
 
-\item \textbf{\textit{Distribuciones estacionarias}}
+\subsection{Distribuciones estacionarias}
 Un vector fila $\pi$ = $(\pi_{1},\dots,\pi_{M})$ con $\pi_{i}\geq0$ and $\sum_{i}\pi_{i} = 1$ es una \textit{distribución estacionaria} para una cadena de Markov con \textit{matriz de transición} $P$ si
 \[
 \pi P = \pi
@@ -232,6 +232,32 @@ Un vector fila $\pi$ = $(\pi_{1},\dots,\pi_{M})$ con $\pi_{i}\geq0$ and $\sum_{i
 Si $\pi$ es la distribución de $X_{0}$, esto es si $\pi_{i} = P(X_{0} = i)$, entonces $\pi P$ vendría a ser la distribución marginal de $X_{1}$. Esto significa que, si $X_{0}$ tiene distribución $\pi$, entonces $X_{1}$ también tendrá una distribución $\pi$. Si $X_{2}$ tiene una distribución $\pi$ entonces $X_{3}$ también la tendrá y así sucesivamente.
 Por lo tanto, una distribución estacionaria de una cadena de Markov es una distribución de probabilidad que se mantiene sin cambios en la cadena a medida que avanza el tiempo.
 \end{enumerate}
+
+\subsection{Convergencia}
+Ya hemos declarado informalmente que la distribución estacionaria describe el
+comportamiento a largo plazo de la cadena, en el sentido de que si ejecutamos la cadena por un largo tiempo,
+la distribución marginal de $X_{}$ converge a la distribución estacionaria $S$. El siguiente
+el teorema establece que esto es cierto siempre que la cadena sea tanto irreductible como aperiódica.
+Entonces, independientemente de las condiciones iniciales de la cadena, el PMF de Xn convergerá a la distribución estacionaria cuando  $n \longrightarrow \infty.$ 
+theorema 11.3.6(Convergencia a la distribucion estacionaria). Sea $X_0,X_1,\dots $ sea una cadena de Markov con distribucion estacionaria $S$ y matrix de transicion $Q$, tal que la potencia $Q^{n}$ tiene todas las entradas positivas. Entonces $P(X_{n}=i)$ converge a $S_{i}$ mientras  $n \longrightarrow \infty.$. En terminos de la matriz de transicion, $Q^{n}$ converge a una matriz en la que cada fila es $S$.\\
+
+
+\[
+\left( \begin{array}{cccc}
+1/3 & 2/3 \\
+1/2 & 1/2 \end{array}  \right)^{n}
+\rightarrow
+\left( \begin{array}{cccc}
+3/7 & 4/7 \\
+3/7 & 4/7 \end{array}  \right)
+cuando \phantom{x} n \rightarrow \infty
+\]
+\vspace*{1cm}
+\subsection{Reversibilidad}
+Hemos visto que la distribución estacionaria de una cadena de Markov es extremadamente util para entender su comportamiento a largo plazo. Desafortunamente en general puede ser computacionalmente dificil de encontrar la distribución estacionaria cuando el espacio de estados es grande.\\
+"Definition" Sea $Q = (q_{ij})$ sea la matrix de transicion de una cadena de Markov, Suponiendo que es $S=(S_1,\dots,S_M)$ con $S_i\geq0, \sum_{i}S_i = 1$ tal que $$S_{i}q_{ij}=S_{j}q_{ji}$$ Para todos los estados $i$ and $j$. Esta ecuacion es llamada $reversibilidad$ o \textit{Detalle de la condición de equilibrio}, y nosotros diremos que la cadena \textit{reversible} respecto a $S$ si la contiene.
+
+Dada una matriz de transición, si podemos encontrar un vector no negativo $s$ cuyas componentes suman 1 y que satisfaga la condición de reversibilidad, entonces $s$ es automáticamente una distribución estacionaria.
 
 \begin{center}
 \section{IMPLEMENTACIÓN}
