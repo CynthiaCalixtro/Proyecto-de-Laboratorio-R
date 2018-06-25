@@ -1,20 +1,18 @@
-
-\documentclass{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
-\usepackage{amsmath, amsthm, amsfonts}
-\usepackage{multicol}
+\usepackage[english,spanish]{babel}
+\usepackage{indentfirst}
+\usepackage{anysize} % Soporte para el comando \marginsize
+%\marginsize{1.5cm}{1.5cm}{0.5cm}{1cm}
+\marginsize{2,5cm}{1,8cm}{4cm}{1,7cm}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{multicol,caption}
+\usepackage{blindtext}
 \usepackage{graphicx}
-\usepackage{vmargin}
-\setmargins{2.5cm}       % margen izquierdo
-{1.5cm}                        % margen superior
-{16.5cm}                      % anchura del texto
-{23.42cm}                    % altura del texto
-{10pt}                           % altura de los encabezados
-{1cm}                           % espacio entre el texto y los encabezados
-{0pt}                             % altura del pie de página
-{2cm}                           % espacio entre el texto y el pie de página
-
 \newtheorem{thm}{Teorema}[section]
 \newtheorem{cor}[thm]{Corolario}
 \newtheorem{lem}[thm]{Lema}
@@ -30,69 +28,142 @@
 
 %--------------------------------------------------------------------------
 \DeclareMathOperator{\Jac}{Jac}
+\renewcommand{\thepage}{}
 
-%--------------------------------------------------------------------------
-\title{Cadenas de Markov}
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
 
-\author{
-	Calixtro Ames, Cynthia Lizeth\\
-	\texttt{ccalixtroa@uni.pe}\\
-	\small{Escuela de Ciencia de la Computación}\\
-	\small{Universidad Nacional de Ingeniería}
-	\and
-	Huamaní Inga, Alex Raúl\\
-	\texttt{ahuamanii@uni.pe}\\
-	\small{Escuela de Matemática}\\
-	\small{Universidad Nacional de Ingeniería}
-}
+\columnsep=7mm
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{definicion}{Definici\'on}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{prueba}{Prueba}[section]
+\newtheorem{prueba*}{Prueba}[section]
+\newtheorem{corolario}{Corolario}[section]
+\newtheorem{observacion}{Observaci\'on}[section]
+\newtheorem{lema}{Lema}[section]
+\newtheorem{ejemplo}{Ejemplo}[section]
+\newtheorem{solucion*}{Soluci\'on}[section]
+\newtheorem{algoritmo}{Algoritmo}[section]
+\newtheorem{proposicion}{Proposici\'on}[section]
+
+\linespread{1.4} \sloppy
+
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Lr}{\mathcal{L}}
+\newcommand{\fc}{\displaystyle\frac}
+\newcommand{\ds}{\displaystyle}
+
+\DeclareMathOperator{\Dom}{Dom}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 \begin{document}
-\maketitle
+\begin{center}
+ {\Large \textbf{CADENAS DE MARKOV}}
+\end{center}
+\begin{center}
+Calixtro Ames Cynthia Lizeth $1$, Nesiosup Vilca Marcia Paulina $2$\\
+Huamaní Inga Alex Raúl $3$, Romero Gómez Yasmyn Stephany $4$\vskip12pt
+{\it E.P.Ciencia de la computación $1$, Facultad de Ciencias $1$, Universidad Nacional de Ingeniería $1$, e-mail:ccalixtroa@uni.pe \\E.P.Matemática $2$, Facultad de Ciencias $2$, Universidad Nacional de Ingeniería $2$, e-mail:marcia.nesiosup@gmail.com \\ E.P.Matemática $3$, Facultad de Ciencias $3$, Universidad Nacional de Ingeniería $3$, e-
+mail:ahuamanii@uni.pe \\E.P.Matemática $4$, Facultad de Ciencias $4$,Universidad Nacional de Ingeniería$4$, e- mail:}
+\end{center}
+%\maketitle 
+\begin{quotation}
+{\small
+\begin{abstract}
 
-\abstract{Aquí va el resumen}
+\end{abstract}
+Palabras Claves:   
+}\\
+{\small
+\hspace*{0.5cm} 
 
-\section{Introducción}
+Keywords:  \\ 
+}
+\end{quotation}
+\begin{multicols}{2}
+\begin{center}
+\section {INTRODUCCIÓN}
+\end{center}
+
+
+
 \subsection{Conceptos previos}
 \subsubsection{Procesos Estocásticos}\label{sec:nada}
 
 Un proceso estocástico se puede definir equivalentemente de dos formas diferentes:\\
+1. Como un conjunto de realizaciones temporales y un índice aleatorio que selecciona una 
+de ellas.\
 
-1. Como un conjunto de realizaciones temporales y un índice aleatorio que selecciona una de ellas.\
-
-2. Como un conjunto de variables aleatorias $X_{t}$ indexadas por un índice $t$ , dado que $t \in T$ con $T\subseteq \mathbb{R} $.
+2. Como un conjunto de variables aleatorias $X_{t}$ indexadas por un índice $t$ , dado 
+que $t \in T$ con $T\subseteq \mathbb{R} $.
 \\\
 
-Un proceso se dice de \textbf{tiempo continuo} si $T$ es un intervalo (usualmente este intervalo se toma como $[0,\infty\rangle$) o de \textbf{tiempo discreto} si $T$ es un conjunto numerable (solamente puede asumir determinados valores, usualmente se toma $T \subseteq \mathbb{N}$). De donde el conjunto $T$ sera llamado \textbf{espacio parametral} en donde las variables aleatorias toman valores en un conjunto $S$ llamado \textbf{espacio de estados}
-
+Un proceso se dice de \textbf{tiempo continuo} si $T$ es un intervalo (usualmente este 
+intervalo se toma como $[0,\infty\rangle$) o de \textbf{tiempo discreto} si $T$ es un 
+conjunto numerable (solamente puede asumir determinados valores, usualmente se toma $T 
+\subseteq \mathbb{N}$). De donde el conjunto $T$ sera llamado \textbf{espacio 
+parametral} en donde las variables aleatorias toman valores en un conjunto $S$ llamado 
+\textbf{espacio de estados}
 \subsubsection{Trayectoria de un proceso}\label{sec:nada2}
-Una $trayectoria$ de un proceso estocástico $x_{t}: t \in T$ es una función $$t \longmapsto X_{t}(w)]$$ para cada $w \in \omega.$
+Una $trayectoria$ de un proceso estocástico $x_{t}: t \in T$ es una función $$t 
+\longmapsto X_{t}(w)]$$ para cada $w \in \omega.$
 \ Existen distintos tipos de procesos estocásticos. Éstos se obtienen al considerar 
 \begin{itemize}
 	\item Distintos espacios parametrales.
 	\item Distintos espacios de estado.
 	\item Distintas características de la trayectorias.
-	\item Distintas relaciones de dependencia estocástica entre las variables aleatorias que conforman el proceso.
+	\item Distintas relaciones de dependencia estocástica entre las variables aleatorias 
+	que conforman el proceso.
 \end{itemize}
 \subsubsection{Algunos ejemplos de procesos}
 \begin{itemize}
 	\item \textbf{Proceso de ensayos independientes}\\
-	supongamos que el espacio parametral $T={1,2,\dots}$ es el conjunto de numeros naturales y $S \subseteq \mathbb{R}$, cuando las variables aleatorias$(X_{1},X_{2},\dots)$ son independientes se dice que este es un proceso estocastico de
-	ensayos independientes, "recordar que una coleccion infinita de variables es independientes si toda subcoleccion finita lo es" \\
+	supongamos que el espacio parametral $T={1,2,\dots}$ es el conjunto de numeros 
+	naturales y $S \subseteq \mathbb{R}$, cuando las variables aleatorias$(X_{1},X_{2},
+	\dots)$ son independientes se dice que este es un proceso estocastico de
+	ensayos independientes, "recordar que una coleccion infinita de variables es 
+	independientes si toda subcoleccion finita lo es" \\
 	\item \textbf{Procesos de Markov} \\
-	El proceso ${X_{t}: t=0,1,\dots}$ es donde $X_{t} \in S$ es discreto es un \textbf{proceso de Markov} si para cada $x_0,x_1,\dots,x_{n+1} en S$ se cumple la siguiente propiedad 
+	El proceso ${X_{t}: t=0,1,\dots}$ es donde $X_{t} \in S$ es discreto es un 
+	\textbf{proceso de Markov} si para cada $x_0,x_1,\dots,x_{n+1} en S$ se cumple la 
+	siguiente propiedad 
 	$$ P(X_{n+1}=x_{n+1}|X_0=x_0,\dots,X_n=x_n)=P(X_{n+1}=x_{n+1}|X_{n}=x_n) $$
-	Es decir la historia del proceso hasta el tiempo n-1 es irrelevante cuando se conoce el estado del proceso al tiempo $n$ a esta identidad se le conoce con el nombre de \textbf{propiedad de Markov} y es un buen ejemplo del tipo de 
-	dependencia estocástica que puede existir entre las variables de un proceso en este caso las variables aleatorias son discretas y al proceso lo llamaremos \textbf{Cadenas de Markov} en este pequeño articulo nos centraremos en esto. \\
+	Es decir la historia del proceso hasta el tiempo n-1 es irrelevante cuando se conoce 
+	el estado del proceso al tiempo $n$ a esta identidad se le conoce con el nombre de 
+	\textbf{propiedad de Markov} y es un buen ejemplo del tipo de 
+	dependencia estocástica que puede existir entre las variables de un proceso en este 
+	caso las variables aleatorias son discretas y al proceso lo llamaremos 
+	\textbf{Cadenas 
+	de Markov} en este pequeño articulo nos centraremos en esto. \\
 	\item \textbf{Procesos con incrementos independientes} \\
-	el proceso $ {X_{t}: t \geq 0}$ tiene \textbf{incrementos independientes} si las variables aleatorias $$X_{t1},X_{t2}-X_{t1},\dots, X_{tn}- X{tn-1}$$ son independientes para cualesquiera tiempos  $0\leq t_{1}<t_{2}<\dots<t_{n}.$\\
+	el proceso $ {X_{t}: t \geq 0}$ tiene \textbf{incrementos independientes} si las 
+	variables aleatorias $$X_{t1},X_{t2}-X_{t1},\dots, X_{tn}- X{tn-1}$$ son 
+	independientes 
+	para cualesquiera tiempos  $0\leq t_{1}<t_{2}<\dots<t_{n}.$\\
 	\item \textbf{Procesos estacionarios}\\
-	El proceso ${X_{t}:t\geq0}$ es \textbf{estacionario} en el sentido estricto si para cualesquiera $t_1,\dots,t_n,h \geq 0$
+	El proceso ${X_{t}:t\geq0}$ es \textbf{estacionario} en el sentido estricto si para 
+	cualesquiera $t_1,\dots,t_n,h \geq 0$
 	$$(X_{t_1},\dots,X_{t_n})\stackrel{d}{=}(X_{t_1+h},\dots,X_{t_n+h})$$
-	de donde el vector aleatorio del lado derecho tiene la misma distribucion que el vector aleatorio del lado izquierdo. Esto significa que el vector aleatorio del lado izquierdo se puede trasladar en el tiempo como indica el vector del lado derecho sin que cambie su distribucion de probabilidad.\\
+	de donde el vector aleatorio del lado derecho tiene la misma distribucion que el 
+	vector aleatorio del lado izquierdo. Esto significa que el vector aleatorio del lado 
+	izquierdo se puede trasladar en el tiempo como indica el vector del lado derecho sin 
+	que cambie su distribucion de probabilidad.\\
 	\item \textbf{Procesos con incrementos estacionarios}\\
-	El proceso ${X_t : t \geq 0}$ tiene \textbf{incrementos estacionarios} si para cualesquiera $0\leq S < t; h \geq 0 $ $$X_t - X_s \stackrel{d}{=} X_{t+h} - X_{s+h} $$
+	El proceso ${X_t : t \geq 0}$ tiene \textbf{incrementos estacionarios} si para 
+	cualesquiera $0\leq S < t; h \geq 0 $ $$X_t - X_s \stackrel{d}{=} X_{t+h} - X_{s+h} 
+	$$
 	\item \textbf{Martingalas} \\
-	El proceso ${X_t : t = 0,1,\dots}$ es una \textbf{Martingala} si $$E(X_{n+1}|X_0=x_0,\dots,X_n=x_n)=x_n$$ pero en realidad hay otras condiciones tecnicas que se piden a un proceso para que sea un martingala.\\
+	El proceso ${X_t : t = 0,1,\dots}$ es una \textbf{Martingala} si $$E(X_{n+1}|
+	X_0=x_0,\dots,X_n=x_n)=x_n$$ pero en realidad hay otras condiciones tecnicas que se 
+	piden a un proceso para que sea un martingala.\\
 	\item Procesos de Lévy \\
 	El procese ${X_t: t\geq0}$ es un \textbf{proceso de Lévy} si sus incrementos son:
 	\begin{itemize}
@@ -100,19 +171,33 @@ Una $trayectoria$ de un proceso estocástico $x_{t}: t \in T$ es una función $$
 		\item Estacionarios
 	\end{itemize}
 	\item \textbf{Procesos Gausianos}\\
-	El proceso $X_t: t\geq 0$ es un \textbf{proceso gausiano} si para cualesquiera tiempos $t_1,\dots,t_n$ 
+	El proceso $X_t: t\geq 0$ es un \textbf{proceso gausiano} si para cualesquiera 
+	tiempos $t_1,\dots,t_n$ 
 	$$(X_{t_1},\dots,X_{t_n}) \sim \mbox{Normal multivariada}$$
 \end{itemize}
-
-Observaciones. No debe pensarse que estas caracteristicas de los procesos son excluyentes unas de otras, por ejemplo existen varios procesos estocasticos que cumplen varias de estas propiedades al mismo tiempo, por ejemplo el movimiento Browmiano es un proceso estocastico importante es un proceso \textbf{gausiano} con \textbf{incrementos independientes} y \textbf{estacionarios} por lo tanto es un proceso de \textbf{Lévy}, puede ademas demostrarse que es una \textbf{Martingala} y  que cumple la \textbf{propiedad de Markov}
+Observaciones. No debe pensarse que estas caracteristicas de los procesos son 
+excluyentes unas de otras, por ejemplo existen varios procesos estocasticos que cumplen 
+varias de estas propiedades al mismo tiempo, por ejemplo el movimiento Browmiano es un 
+proceso estocastico importante es un proceso \textbf{gausiano} con \textbf{incrementos 
+independientes} y \textbf{estacionarios} por lo tanto es un proceso de \textbf{Lévy}, 
+puede ademas demostrarse que es una \textbf{Martingala} y  que cumple la 
+\textbf{propiedad de Markov}
 
 \subsection{Conceptos y simulación}
 \subsubsection{Cadenas de Markov}
 \textbf{Definición 1. Espacio de estados}\\
-Definimos el \textit{espacio de estados} como el conjunto formado por todos los posibles valores que puede tomar $X_{n}$ donde el índice $n$ representa la evolución del proceso en el \textit{tiempo}. Para una cadena de Markov tanto el \textit{espacio de estados} como el \textit{tiempo} pueden ser discreto o continuo.\\
+Definimos el \textit{espacio de estados} como el conjunto formado por todos los posibles 
+valores que puede tomar $X_{n}$ donde el índice $n$ representa la evolución del proceso 
+en el \textit{tiempo}. Para una cadena de Markov tanto el \textit{espacio de estados} 
+como el \textit{tiempo} pueden ser discreto o continuo.\\
 
 \textbf{Definición 2. Cadena de Markov}\\
-Una cadena de Markov es una secuencia de variables aleatorias $X_{0},X_{1},X_{2},...$ que toman valores en en \textit{espacio de estados} $\{1,2,\dots,M\}$ si para todo $n\geq0$ se cumple la propiedad de Markov. Donde $P(X_{n+1}=x_{n+1}|X_{n}=x_n)$ se denomina probabilidad de transición desde el estado $i$ hacia el estado $j$. Como esta probabilidad no depende de el valor de $n$ se dice que el tiempo es \textit{homogeneo}.\\
+Una cadena de Markov es una secuencia de variables aleatorias $X_{0},X_{1},X_{2},...$ 
+que toman valores en en \textit{espacio de estados} $\{1,2,\dots,M\}$ si para todo $n
+\geq0$ se cumple la propiedad de Markov. Donde $P(X_{n+1}=x_{n+1}|X_{n}=x_n)$ se 
+denomina probabilidad de transición desde el estado $i$ hacia el estado $j$. Como esta 
+probabilidad no depende de el valor de $n$ se dice que el tiempo es \textit{homogeneo}.\
+\
 
 \textbf{Definición 3. Matriz de transición}\\
 Sean $X_{0},X{1},X_{2},\dots$ una cadena de Markov con espacio de estados $\{1,2,\dots,M\}$ y sea
@@ -154,47 +239,47 @@ Por lo tanto, una distribución estacionaria de una cadena de Markov es una dist
 \subsubsection{Simulaciones}
 \textbf{A. Simulación de una cadena de Markov}
 
-\begin{figure}[!h]
+\begin{Figure}
 	\centering
-	\includegraphics[scale=0.8]{fun1}
-	\caption{Función que simula una cada de Markov.}
+	\includegraphics[scale=0.30]{fun1.jpeg}
+	\captionof{figure}{Función que simula una cada de Markov.}
 	\label{figura1}
-\end{figure}
+\end{Figure}
 
 Si consideramos un espacio de estados $E=\{A,C,G,T\}$ (A=adenina,C=citosina,G=guanina,T=timina)
 
-\begin{figure}[!h]
+\begin{Figure}
 	\centering
-	\includegraphics[scale=0.8]{fun2}
-	\caption{Matriz de transición de la cadena de Markov.}
+	\includegraphics[scale=0.26]{fun2.jpeg}
+	\captionof{figure}{Matriz de transición de la cadena de Markov.}
 	\label{figura2}
-\end{figure}
+\end{Figure}
 
-\begin{figure}[!h]
+\begin{Figure}
 	\centering
-	\includegraphics[scale=0.55]{fun3}
-	\caption{Probando la función \textit{rMarkov}.}
+	\includegraphics[scale=0.20]{fun3.jpeg}
+	\captionof{figure}{Probando la función \textit{rMarkov}.}
 	\label{figura3}
-\end{figure}
+\end{Figure}
 
-\begin{figure}[!h]
+\begin{Figure}
 	\centering
-	\includegraphics[scale=0.7]{fun4}
-	\caption{Graficando la cadena de Markov.}
+	\includegraphics[scale=0.25]{fun4.jpeg}
+	\captionof{figure}{Graficando la cadena de Markov.}
 	\label{figura4}
-\end{figure}
+\end{Figure}
 
-\begin{figure}[!h]
+\begin{Figure}
 	\centering
-	\includegraphics[scale=0.9]{fun5}
-	\caption{Grafica Tiempo VS Estados.}
+	\includegraphics[scale=0.2]{fun5.jpeg}
+	\captionof{figure}{Grafica Tiempo VS Estados.}
 	\label{figura5}
-\end{figure}
+\end{Figure}
 
+\end{multicols}
 \begin{thebibliography}{99}
 
 \bibitem{Cd94} Autor, \emph{Ttulo}, Revista/Editor, (ao)
 
 \end{thebibliography}
-
 \end{document}
