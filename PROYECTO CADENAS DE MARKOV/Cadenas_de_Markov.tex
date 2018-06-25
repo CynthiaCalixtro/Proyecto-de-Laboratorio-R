@@ -72,23 +72,22 @@
 \begin{center}
 Calixtro Ames Cynthia Lizeth $1$, Nesiosup Vilca Marcia Paulina $2$\\
 Huamaní Inga Alex Raúl $3$, \vskip12pt
-{\it E.P.Ciencia de la computación $1$, Facultad de Ciencias $1$, Universidad Nacional de Ingeniería $1$, e-mail:ccalixtroa@uni.pe \\E.P.Matemática $2$, Facultad de Ciencias $2$, Universidad Nacional de Ingeniería $2$, e-mail:marcia.nesiosup@gmail.com \\ E.P.Matemática $3$, Facultad de Ciencias $3$, Universidad Nacional de Ingeniería $3$, e-
-mail:ahuamanii@uni.pe}
+{\it E.P.Ciencia de la computación $1$, Facultad de Ciencias $1$, Universidad Nacional 
+de Ingeniería $1$, e-mail:ccalixtroa@uni.pe \\E.P.Matemática $2$, Facultad de Ciencias 
+$2$, Universidad Nacional de Ingeniería $2$, e-mail:marcia.nesiosup@gmail.com \\ 
+E.P.Matemática $3$, Facultad de Ciencias $3$, Universidad Nacional de Ingeniería $3$,  
+\\e-mail:ahuamanii@uni.pe}
 \end{center}
 %\maketitle 
 \begin{quotation}
 {\small
 \begin{abstract}
-\noindent  Una cadena de Markov es una serie de eventos, en la cual la probabilidad de que ocurra un evento depende del evento inmediato anterior. En efecto, las cadenas de este tipo tienen memoria, $"recuerdan"$ el último evento y esto condiciona las posibilidades de los eventos futuros. Esta dependencia del evento anterior distingue a las cadenas de Markov de las series de eventos independientes, como tirar una moneda al aire o un dado. En el presente estudio realizamos un estudio general de las cadenas de markov, su convergencia y la implementación de un algoritmo (empleando el lenguaje de programación R) que nos permita simular 3 diferentes tipos de cadenas de Markov (irreductibles,periódicas y estacionarias).
+\noindent  Una cadena de Markov es una serie de eventos, en la cual la probabilidad de que ocurra un evento depende del evento inmediato anterior. En efecto, las cadenas de este tipo tienen memoria, $"recuerdan"$ el último evento y esto condiciona las posibilidades de los eventos futuros. Esta dependencia del evento anterior distingue a las cadenas de Markov de las series de eventos independientes, como tirar una moneda al aire o un dado. En el presente estudio realizamos un estudio general de las cadenas de markov, su convergencia y la implementación de un algoritmo (empleando el lenguaje de programación R) que nos permita simular 3 diferentes tipos de cadenas de Markov (irreducibles,periódicas y estacionarias).
 
 \end{abstract}
 \hspace*{0.5cm} Palabras Claves:Cadenas, Markov, Implementación, Estocástico.  
 }\\
-{\small
-\hspace*{0.5cm} 
 
-Keywords: Chains, Markov, Implementation, Estochastic. \\ 
-}
 \end{quotation}
 \begin{multicols}{2}
 \section{INTRODUCCIÓN}
@@ -98,12 +97,12 @@ Para una mejor comprensión de las cadenas de Markov y la posterior simulación 
 Un proceso estocástico se puede definir equivalentemente de las siguientes dos maneras.\\
 1. Como un conjunto de realizaciones temporales y un índice aleatorio que selecciona una 
 de ellas.\\
-2. Como un conjunto de variables aleatorias $X_{t}$ indexadas por un índice $t$ , dado que $t \in T$ con $T\subseteq \mathbb{R} $.\\\\
+2. Como un conjunto de variables aleatorias $X_{t}$ indexadas por un índice $t$ , dado que $t \in T$ con $T\subseteq \mathbb{R} $.\\
 Un proceso estocástico se dice de \textbf{\textit{tiempo continuo}} si $T$ es un intervalo (usualmente este intervalo se toma como $[0,\infty\rangle$) o de \textbf{\textit{tiempo discreto}} si $T$ es un conjunto numerable (solamente puede asumir determinados valores, usualmente se toma $T 
 \subseteq \mathbb{N}$),de donde el conjunto $T$ sera llamado \textbf{\textit{espacio 
 parametral}} y las variables aleatorias toman valores en un conjunto $S$ llamado 
 \textbf{espacio de estados}.\\
-\\
+
 \textbf{\textit{Trayectoria de un proceso estocástico}}\\
 Una $trayectoria$ de proceso estocástico $x_{t}: t \in T$ es una función $$t 
 \longmapsto X_{t}(w)]$$ para cada $w \in \omega.$\\
@@ -174,7 +173,7 @@ puede además demostrarse que es una \textbf{Martingala} y que cumple la
 \textbf{propiedad de Markov}.\\
 
 \noindent Con un panorama más amplio de conocimiento acerca de los procesos estocásticos entraremos a profundidad en el concepto y diversos ejemplos de cadenas de Markov.\\
-\subsection{Cadenas de Markov irreductibles y aperiódicas}
+\subsection{Cadenas de Markov irreducibles y aperiódicas}
 \noindent {\textbf{Definición 1. Espacio de estados}}\\
 Definimos el \textit{espacio de estados} como el conjunto formado por todos los posibles 
 valores que puede tomar $X_{n}$ donde el índice $n$ representa la evolución del proceso 
@@ -208,8 +207,8 @@ Sea el vector fila $q = (q_{1},\dots,q_{M})$ con $q_{i} = P(X_{0} = i)$ entonces
 
 \noindent \textbf{Tipos de cadenas de Markov:}\\
 
-\textbf{\textit{Cadena de Markov Irreductible:}}
-Se dice que una cadena de Markov con matriz de transición $P$ es \textit{irreductible} si para dos estados $i$ y $j$ cualesquiera existe un entero positivo $n$ tal que el elemento de índices $(i,j)$ en la matriz $P^n$ es positivo. Es decir, es posible ir de $i$ a $j$ en un número finito de pasos. En caso contrario se dirá que la cadena de Markov es \textit{reducible}.\\
+\textbf{\textit{Cadena de Markov Irreducible:}}
+Se dice que una cadena de Markov con matriz de transición $P$ es \textit{irreducible} si para dos estados $i$ y $j$ cualesquiera existe un entero positivo $n$ tal que el elemento de índices $(i,j)$ en la matriz $P^n$ es positivo. Es decir, es posible ir de $i$ a $j$ en un número finito de pasos. En caso contrario se dirá que la cadena de Markov es \textit{reducible}.\\
 
 \textbf{\textit{Cadena de Markov Periódica:}}
 \vspace*{0.25cm}
@@ -236,7 +235,7 @@ Por lo tanto, una distribución estacionaria de una cadena de Markov es una dist
 Ya hemos declarado informalmente que la distribución estacionaria describe el
 comportamiento a largo plazo de la cadena, en el sentido de que si ejecutamos la cadena por un largo tiempo,
 la distribución marginal de $X_{}$ converge a la distribución estacionaria $S$. El siguiente
-el teorema establece que esto es cierto siempre que la cadena sea tanto irreductible como aperiódica.
+el teorema establece que esto es cierto siempre que la cadena sea tanto irreducible como aperiódica.
 Entonces, independientemente de las condiciones iniciales de la cadena, el PMF de Xn convergerá a la distribución estacionaria cuando  $n \longrightarrow \infty.$ 
 theorema 11.3.6(Convergencia a la distribucion estacionaria). Sea $X_0,X_1,\dots $ sea una cadena de Markov con distribucion estacionaria $S$ y matrix de transicion $Q$, tal que la potencia $Q^{n}$ tiene todas las entradas positivas. Entonces $P(X_{n}=i)$ converge a $S_{i}$ mientras  $n \longrightarrow \infty.$. En terminos de la matriz de transicion, $Q^{n}$ converge a una matriz en la que cada fila es $S$.\\
 
@@ -260,19 +259,17 @@ Dada una matriz de transición, si podemos encontrar un vector no negativo $s$ c
 
 
 \section{IMPLEMENTACIÓN EN R}
-\begin{enumerate}
-\item \textbf{A. Simulación de una cadena de Markov}
-\item \textbf{B. Simulación de una cadena de Markov Irreducible}
-\item \textbf{C. Simulación de una cadena de Markov Estacionaria}
-\item \textbf{D. Convergencia de cadena de Markov}
-\item \textbf{E. Simulación de una cadena de Markov Reversible}
-\end{enumerate}
+\textbf{A. Simulación de una cadena de Markov}
+\textbf{B. Simulación de una cadena de Markov Irreducible}
+\textbf{C. Simulación de una cadena de Markov Estacionaria}
+\textbf{D. Convergencia de cadena de Markov}
+\textbf{E. Simulación de una cadena de Markov Reversible}
 
  Ver todas las implementaciones en el Jupyter adjunto \url{https://github.com/CynthiaCalixtro/Proyecto-de-Laboratorio-R/blob/master/PROYECTO%20CADENAS%20DE%20MARKOV/Implementacion_en_R-Pruebas.ipynb}
 \section{PRUEBAS}
 Ver pruebas en el Jupyter adjunto  \url {https://github.com/CynthiaCalixtro/Proyecto-de-Laboratorio-R/blob/master/PROYECTO%20CADENAS%20DE%20MARKOV/Implementacion_en_R-Pruebas.ipynb}
 \section{CONCLUSIONES}
-\noindent -Se creó una función que nos permite simular 3 diferentes tipos de cadenas de Markov tomando una matriz de transición.\\
+\noindent -Se implementó una función que nos permite simular 3 diferentes tipos de cadenas de Markov tomando una matriz de transición.\\
 -Cualquier problema para el que puede obtenerse un diagrama de transición de estado y que sigue el enfoque presentado puede analizarse mediante las cadenas de Markov. \\
 -La teoría de Markov es un modelo simplificado de un proceso de toma de decisión complejo. 
 \section{VERIFICACION}
