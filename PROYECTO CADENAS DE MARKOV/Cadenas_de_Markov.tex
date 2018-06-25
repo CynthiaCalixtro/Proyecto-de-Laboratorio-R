@@ -78,7 +78,7 @@ mail:ahuamanii@uni.pe \\E.P.Matemática $4$, Facultad de Ciencias $4$,Universida
 \begin{quotation}
 {\small
 \begin{abstract}
-\noindent  Una cadena de Markov es una serie de eventos, en la cual la probabilidad de que ocurra un evento depende del evento inmediato anterior. En efecto, las cadenas de este tipo tienen memoria, $"recuerdan"$ el último evento y esto condiciona las posibilidades de los eventos futuros. Esta dependencia del evento anterior distingue a las cadenas de Markov de las series de eventos independientes, como tirar una moneda al aire o un dado. En el presente estudio implementamos la simulación de 3 diferentes tipos de cadenas de Markov (irreductibles,periódicas y estacionarias).
+\noindent  Una cadena de Markov es una serie de eventos, en la cual la probabilidad de que ocurra un evento depende del evento inmediato anterior. En efecto, las cadenas de este tipo tienen memoria, $"recuerdan"$ el último evento y esto condiciona las posibilidades de los eventos futuros. Esta dependencia del evento anterior distingue a las cadenas de Markov de las series de eventos independientes, como tirar una moneda al aire o un dado. En el presente estudio realizamos un estudio general de las cadenas de markov, su convergencia y la implementación de un algoritmo (empleando el lenguaje de programación R) que nos permita simular 3 diferentes tipos de cadenas de Markov (irreductibles,periódicas y estacionarias).
 
 \end{abstract}
 \hspace*{0.5cm} Palabras Claves:Cadenas, Markov, Implementación, Estocástico.  
@@ -175,7 +175,7 @@ puede además demostrarse que es una \textbf{Martingala} y que cumple la
 \textbf{propiedad de Markov}.\\
 
 \noindent Con un panorama más amplio de conocimiento acerca de los procesos estocásticos entraremos a profundidad en el concepto y diversos ejemplos de cadenas de Markov.\\
-\subsection{CADENAS DE MARKOV IRREDUCTIBLES Y APERIÓDICAS}
+\subsection{CADENAS DE MARKOV IRREDUCIBLES Y APERIÓDICAS}
 \noindent {\textbf{Definición 1. Espacio de estados}}\\
 Definimos el \textit{espacio de estados} como el conjunto formado por todos los posibles 
 valores que puede tomar $X_{n}$ donde el índice $n$ representa la evolución del proceso 
@@ -260,51 +260,21 @@ Hemos visto que la distribución estacionaria de una cadena de Markov es extrema
 Dada una matriz de transición, si podemos encontrar un vector no negativo $s$ cuyas componentes suman 1 y que satisfaga la condición de reversibilidad, entonces $s$ es automáticamente una distribución estacionaria.
 
 \begin{center}
-\section{IMPLEMENTACIÓN}
+\section{IMPLEMENTACIÓN EN R}
 \end{center}
 \textbf{A. Simulación de una cadena de Markov}
 \textbf{B. Simulación de una cadena de Markov Irreducible}
 \textbf{C. Simulación de una cadena de Markov Estacionaria}
 \textbf{D. Convergencia de cadena de Markov}
 \textbf{E. Simulación de una cadena de Markov Reversible}
-
-\begin{Figure}
-	\centering
-	\includegraphics[scale=0.30]{fun1.jpeg}
-	\captionof{figure}{Función que simula una cada de Markov.}
-	\label{figura1}
-\end{Figure}
-
-Si consideramos un espacio de estados $E=\{A,C,G,T\}$ (A=adenina,C=citosina,G=guanina,T=timina)
-
-\begin{Figure}
-	\centering
-	\includegraphics[scale=0.26]{fun2.jpeg}
-	\captionof{figure}{Matriz de transición de la cadena de Markov.}
-	\label{figura2}
-\end{Figure}
-
-\begin{Figure}
-	\centering
-	\includegraphics[scale=0.20]{fun3.jpeg}
-	\captionof{figure}{Probando la función \textit{rMarkov}.}
-	\label{figura3}
-\end{Figure}
-
-\begin{Figure}
-	\centering
-	\includegraphics[scale=0.25]{fun4.jpeg}
-	\captionof{figure}{Graficando la cadena de Markov.}
-	\label{figura4}
-\end{Figure}
-
-\begin{Figure}
-	\centering
-	\includegraphics[scale=0.2]{fun5.jpeg}
-	\captionof{figure}{Grafica Tiempo VS Estados.}
-	\label{figura5}
-\end{Figure}
-
+ Ver todas las implementaciones en el Jupyter adjunto https://github.com/CynthiaCalixtro/Proyecto-de-Laboratorio-R/blob/master/PROYECTO%20CADENAS%20DE%20MARKOV/Implementacion_en_R-Pruebas.ipynb
+\section{PRUEBAS}
+Ver pruebas en el Jupyter adjunto https://github.com/CynthiaCalixtro/Proyecto-de-Laboratorio-R/blob/master/PROYECTO%20CADENAS%20DE%20MARKOV/Implementacion_en_R-Pruebas.ipynb
+\section{CONCLUSIONES}
+\noindent -Se creó una función que nos permite simular 3 diferentes tipos de cadenas de Markov tomando una matriz de transición.\\
+-Cualquier problema para el que puede obtenerse un diagrama de transición de estado y que sigue el enfoque presentado puede analizarse mediante las cadenas de Markov. \\
+-La teoría de Markov es un modelo simplificado de un proceso de toma de decisión complejo.
+  
 \end{multicols}
 \begin{thebibliography}{99}
 
