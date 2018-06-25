@@ -13,6 +13,7 @@
 \usepackage{multicol,caption}
 \usepackage{blindtext}
 \usepackage{graphicx}
+\usepackage{hyperref}
 \newtheorem{thm}{Teorema}[section]
 \newtheorem{cor}[thm]{Corolario}
 \newtheorem{lem}[thm]{Lema}
@@ -70,9 +71,9 @@
 \end{center}
 \begin{center}
 Calixtro Ames Cynthia Lizeth $1$, Nesiosup Vilca Marcia Paulina $2$\\
-Huamaní Inga Alex Raúl $3$, Romero Gómez Yasmyn Stephany $4$\vskip12pt
+Huamaní Inga Alex Raúl $3$, \vskip12pt
 {\it E.P.Ciencia de la computación $1$, Facultad de Ciencias $1$, Universidad Nacional de Ingeniería $1$, e-mail:ccalixtroa@uni.pe \\E.P.Matemática $2$, Facultad de Ciencias $2$, Universidad Nacional de Ingeniería $2$, e-mail:marcia.nesiosup@gmail.com \\ E.P.Matemática $3$, Facultad de Ciencias $3$, Universidad Nacional de Ingeniería $3$, e-
-mail:ahuamanii@uni.pe \\E.P.Matemática $4$, Facultad de Ciencias $4$,Universidad Nacional de Ingeniería$4$, e- mail:}
+mail:ahuamanii@uni.pe}
 \end{center}
 %\maketitle 
 \begin{quotation}
@@ -90,11 +91,9 @@ Keywords: Chains, Markov, Implementation, Estochastic. \\
 }
 \end{quotation}
 \begin{multicols}{2}
-\begin{center}
 \section{INTRODUCCIÓN}
-\end{center}
 Para una mejor comprensión de las cadenas de Markov y la posterior simulación de algunos ejemplos empezaremos por establecer algunos conceptos previos requeridos.
-\subsection{CONCEPTOS}
+\subsection{Conceptos}
 \textbf{\textit{Procesos Estocásticos}}\\
 Un proceso estocástico se puede definir equivalentemente de las siguientes dos maneras.\\
 1. Como un conjunto de realizaciones temporales y un índice aleatorio que selecciona una 
@@ -175,7 +174,7 @@ puede además demostrarse que es una \textbf{Martingala} y que cumple la
 \textbf{propiedad de Markov}.\\
 
 \noindent Con un panorama más amplio de conocimiento acerca de los procesos estocásticos entraremos a profundidad en el concepto y diversos ejemplos de cadenas de Markov.\\
-\subsection{CADENAS DE MARKOV IRREDUCIBLES Y APERIÓDICAS}
+\subsection{Cadenas de Markov irreductibles y aperiódicas}
 \noindent {\textbf{Definición 1. Espacio de estados}}\\
 Definimos el \textit{espacio de estados} como el conjunto formado por todos los posibles 
 valores que puede tomar $X_{n}$ donde el índice $n$ representa la evolución del proceso 
@@ -208,11 +207,12 @@ y se cumple que $p_{ij}^{(n)}$ es el elemento de subíndices $(i,j)$ de la matri
 Sea el vector fila $q = (q_{1},\dots,q_{M})$ con $q_{i} = P(X_{0} = i)$ entonces la \textit{distribución marginal} de $X_{n}$ está dada por el vector $qP^{n}$. Es decir, el $j$-ésimo componente del vector $qP^{n}$ es $P(X_{n} = j)$\\
 
 \noindent \textbf{Tipos de cadenas de Markov:}\\
-\begin{enumerate}
-\item \textbf{\textit{Cadena de Markov Irreductible}}
+
+\textbf{\textit{Cadena de Markov Irreductible:}}
 Se dice que una cadena de Markov con matriz de transición $P$ es \textit{irreductible} si para dos estados $i$ y $j$ cualesquiera existe un entero positivo $n$ tal que el elemento de índices $(i,j)$ en la matriz $P^n$ es positivo. Es decir, es posible ir de $i$ a $j$ en un número finito de pasos. En caso contrario se dirá que la cadena de Markov es \textit{reducible}.\\
 
-\item \textbf{\textit{Cadena de Markov Periódica}}\\
+\textbf{\textit{Cadena de Markov Periódica:}}
+\vspace*{0.25cm}
 
 \textbf{Definición 6. Periodo de un estado}\\
 Se define el periodo $d_{i}$ de el estado $i$ como
@@ -221,17 +221,16 @@ d_{i} = gcd\{n\geq1:p_{ii}^{(n)}>0\}
 \]
 Esto es, el \textit{gcd} (\textit{máximo común divisor}) del posible número de pasos que puede tomar para regresar al mismo estado, en este caso, al estado $i$. 
 Cuando un estado tiene periodo igual a 1 entonces se dirá que es \textit{aperiódico}, en caso contrario, se le llamará \textit{periódico}.\\
-
-Una cadena de Markov es llamada \textit{aperiódica} cuando todos sus estados son aperiódicos. En caso contrario, se le denomina \textit{periódica}.
+Una cadena de Markov es llamada \textit{aperiódica} cuando todos sus estados son aperiódicos. En caso contrario, se le denomina \textit{periódica.}
 
 \subsection{Distribuciones estacionarias}
-Un vector fila $\pi$ = $(\pi_{1},\dots,\pi_{M})$ con $\pi_{i}\geq0$ and $\sum_{i}\pi_{i} = 1$ es una \textit{distribución estacionaria} para una cadena de Markov con \textit{matriz de transición} $P$ si
+\noindent Un vector fila $\pi$ = $(\pi_{1},\dots,\pi_{M})$ con $\pi_{i}\geq0$ and $\sum_{i}\pi_{i} = 1$ es una \textit{distribución estacionaria} para una cadena de Markov con \textit{matriz de transición} $P$ si
 \[
 \pi P = \pi
 \]
 Si $\pi$ es la distribución de $X_{0}$, esto es si $\pi_{i} = P(X_{0} = i)$, entonces $\pi P$ vendría a ser la distribución marginal de $X_{1}$. Esto significa que, si $X_{0}$ tiene distribución $\pi$, entonces $X_{1}$ también tendrá una distribución $\pi$. Si $X_{2}$ tiene una distribución $\pi$ entonces $X_{3}$ también la tendrá y así sucesivamente.
 Por lo tanto, una distribución estacionaria de una cadena de Markov es una distribución de probabilidad que se mantiene sin cambios en la cadena a medida que avanza el tiempo.
-\end{enumerate}
+
 
 \subsection{Convergencia}
 Ya hemos declarado informalmente que la distribución estacionaria describe el
@@ -259,26 +258,48 @@ Hemos visto que la distribución estacionaria de una cadena de Markov es extrema
 
 Dada una matriz de transición, si podemos encontrar un vector no negativo $s$ cuyas componentes suman 1 y que satisfaga la condición de reversibilidad, entonces $s$ es automáticamente una distribución estacionaria.
 
-\begin{center}
+
 \section{IMPLEMENTACIÓN EN R}
-\end{center}
-\textbf{A. Simulación de una cadena de Markov}
-\textbf{B. Simulación de una cadena de Markov Irreducible}
-\textbf{C. Simulación de una cadena de Markov Estacionaria}
-\textbf{D. Convergencia de cadena de Markov}
-\textbf{E. Simulación de una cadena de Markov Reversible}
- Ver todas las implementaciones en el Jupyter adjunto https://github.com/CynthiaCalixtro/Proyecto-de-Laboratorio-R/blob/master/PROYECTO%20CADENAS%20DE%20MARKOV/Implementacion_en_R-Pruebas.ipynb
+\begin{enumerate}
+\item \textbf{A. Simulación de una cadena de Markov}
+\item \textbf{B. Simulación de una cadena de Markov Irreducible}
+\item \textbf{C. Simulación de una cadena de Markov Estacionaria}
+\item \textbf{D. Convergencia de cadena de Markov}
+\item \textbf{E. Simulación de una cadena de Markov Reversible}
+\end{enumerate}
+
+ Ver todas las implementaciones en el Jupyter adjunto \url{https://github.com/CynthiaCalixtro/Proyecto-de-Laboratorio-R/blob/master/PROYECTO%20CADENAS%20DE%20MARKOV/Implementacion_en_R-Pruebas.ipynb}
 \section{PRUEBAS}
-Ver pruebas en el Jupyter adjunto https://github.com/CynthiaCalixtro/Proyecto-de-Laboratorio-R/blob/master/PROYECTO%20CADENAS%20DE%20MARKOV/Implementacion_en_R-Pruebas.ipynb
+Ver pruebas en el Jupyter adjunto  \url {https://github.com/CynthiaCalixtro/Proyecto-de-Laboratorio-R/blob/master/PROYECTO%20CADENAS%20DE%20MARKOV/Implementacion_en_R-Pruebas.ipynb}
 \section{CONCLUSIONES}
 \noindent -Se creó una función que nos permite simular 3 diferentes tipos de cadenas de Markov tomando una matriz de transición.\\
 -Cualquier problema para el que puede obtenerse un diagrama de transición de estado y que sigue el enfoque presentado puede analizarse mediante las cadenas de Markov. \\
--La teoría de Markov es un modelo simplificado de un proceso de toma de decisión complejo.
+-La teoría de Markov es un modelo simplificado de un proceso de toma de decisión complejo. 
+\section{VERIFICACION}
+La verificación de los procedimientos realizados, los datos empleados así como el código fuente se encuentran anexados en \url{https://github.com/CynthiaCalixtro/Proyecto-de-Laboratorio-R/blob/master/PROYECTO%20CADENAS%20DE%20MARKOV/Funci%C3%B3n%20en%20R%20para%20simular%20una%20cadena%20de%20Markov.ipynb}
   
 \end{multicols}
-\begin{thebibliography}{99}
+\begin{center}
+ -----------------------------------------------------------------------------
+\end{center}
+\begin{multicols}{2}
+\begin{list}{}{\setlength{\topsep}{0mm}\setlength{\itemsep}{0mm}%
+\setlength{\parsep}{0mm}\setlength{\leftmargin}{4mm}}
+%
+%------------------------------------- References --------------------
+\small
+\item[1.]  \textsc{Grimmet} y \textsc{Welsh},
+	\textit{Probability, an Introduction}, segunda edición, Oxford-Press-2014, pág. 205
+	
+\item[2.] \textsc{Blitzstein, Joseph. K.} y \textsc{Hwang, Jessica},
+	\textit{Introduction to Probability}, Chapman Hall CRC-2014, pág. 459 complementado con http://projects.iq.harvard.edu/stat110/home
+	
+\item[3.] \textsc{Ross, Sheldon M.}
+	\textit{Introducción a la Estadística}, Editorial Reverté-2012
 
-\bibitem{Cd94} Autor, \emph{Ttulo}, Revista/Editor, (ao)
-
-\end{thebibliography}
+%---------------------------------------------------------------------
+%
+\end{list}
+\end{multicols}
 \end{document}
+
