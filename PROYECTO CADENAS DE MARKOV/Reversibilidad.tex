@@ -1,0 +1,24 @@
+\section{Convergencia}
+Ya hemos declarado informalmente que la distribución estacionaria describe el
+comportamiento a largo plazo de la cadena, en el sentido de que si ejecutamos la cadena por un largo tiempo,
+la distribución marginal de $X_{}$ converge a la distribución estacionaria $S$. El siguiente
+el teorema establece que esto es cierto siempre que la cadena sea tanto irreductible como aperiódica.
+Entonces, independientemente de las condiciones iniciales de la cadena, el PMF de Xn convergerá a la distribución estacionaria cuando  $n \longrightarrow \infty.$ 
+theorema 11.3.6(Convergencia a la distribucion estacionaria). Sea $X_0,X_1,\dots $ sea una cadena de Markov con distribucion estacionaria $S$ y matrix de transicion $Q$, tal que la potencia $Q^{n}$ tiene todas las entradas positivas. Entonces $P(X_{n}=i)$ converge a $S_{i}$ mientras  $n \longrightarrow \infty.$. En terminos de la matriz de transicion, $Q^{n}$ converge a una matriz en la que cada fila es $S$.\\
+
+
+\[
+\left( \begin{array}{cccc}
+1/3 & 2/3 \\
+1/2 & 1/2 \end{array}  \right)^{n}
+\rightarrow
+\left( \begin{array}{cccc}
+3/7 & 4/7 \\
+3/7 & 4/7 \end{array}  \right)
+cuando \phantom{x} n \rightarrow \infty
+\]
+\section{Reversibilidad}
+Hemos visto que la distribución estacionaria de una cadena de Markov es extremadamente util para entender su comportamiento a largo plazo. Desafortunamente en general puede ser computacionalmente dificil de encontrar la distribución estacionaria cuando el espacio de estados es grande.\\
+"Definition" Sea $Q = (q_{ij})$ sea la matrix de transicion de una cadena de Markov, Suponiendo que es $S=(S_1,\dots,S_M)$ con $S_i\geq0, \sum_{i}S_i = 1$ tal que $$S_{i}q_{ij}=S_{j}q_{ji}$$ Para todos los estados $i$ and $j$. Esta ecuacion es llamada $reversibilidad$ o \textit{Detalle de la condición de equilibrio}, y nosotros diremos que la cadena \textit{reversible} respecto a $S$ si la contiene.
+
+Dada una matriz de transición, si podemos encontrar un vector no negativo $s$ cuyas componentes suman 1 y que satisfaga la condición de reversibilidad, entonces $s$ es automáticamente una distribución estacionaria.
